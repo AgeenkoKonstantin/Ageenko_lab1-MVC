@@ -6,6 +6,9 @@ using Ageenko_lab1.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<Ageenko_lab1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Ageenko_lab1Context")));
+
+builder.Services.AddDbContext<Ageenko_lab1Context>(options =>
 
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("Ageenko_lab1Context")));
